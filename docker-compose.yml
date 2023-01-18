@@ -1,0 +1,10 @@
+services:
+  proxy:
+    image: nginx:1.23
+    ports: 
+    - 80:80
+    volumes:
+    - ./proxy/todos.conf:/etc/nginx/nginx.conf:ro
+
+  backend:
+    build: ./backend
